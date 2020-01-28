@@ -16,6 +16,8 @@ function addNumbers(num1, num2) {
   return num1 + num2;
 }
 
+console.log(addNumbers(1,4))
+
 // ⭐️ Example Challenge end ⭐️
 
 
@@ -40,12 +42,15 @@ function addNumbers(num1, num2) {
  * }
 */
 function makePersonObject(id, name, email) {
-
-      console.log("id: " + id );
-      console.log("name: " + name);
-      console.log("email: " + email);
+      const person ={
+        id: id,
+        name: name,
+        email: email
+      }
+      return person
 
 }
+
 
 
 
@@ -54,7 +59,10 @@ function makePersonObject(id, name, email) {
  * 
  * @instructions
  * This function takes as its only argument
+ * // I have function getName passing name
+ * 
  * an object containing a `name` property,
+ * // I have the
  * and return a string that reads `Hello, my name is {name}`,
  * where `{name}` is the name stored in the object.
  * 
@@ -62,9 +70,15 @@ function makePersonObject(id, name, email) {
  * passing { id: 1, name: 'Leia', email: 'leia@leia.com` } as the argument,
  * the returned value should look like `Hello, my name is Leia`.
 */
-function getName(name){
- console.log("Hello, my name is " + name); 
+function getName(newName){
+  const thing = {
+    name: newName
+  };
+
+  return `Hello, my name is ${thing.name}`;
 }
+
+console.log(getName("ivan"));
 
 
 /**
@@ -72,6 +86,7 @@ function getName(name){
  * 
  * @instructions
  * This function takes a single `name` argument and returns an object.
+ * I passed newName inside of makeSmartPeople
  * The returned object has the following characteristics:
  *     It has a `name` property that contains the argument passed in.
  *     It has a `sum` method that takes two numbers as arguments
@@ -80,31 +95,31 @@ function getName(name){
  *         and returns a string like `Hello, my name is {name}`.
  *         where `{name}` is the name passed into `makeSmartPerson`.
 */
-function makeSmartPerson(name) {
+function makeSmartPerson(newName) {
+      const smartGuy = {
+          name: newName,
 
-  let myobject ={
-      name: "name",
+          sum: function (){
+            return 2+ 1
+          },
 
-      sum: function(num1, num2){
-
-        return num1 + num2;
-      },
-
-      speak: function(){
-        return "Hello, my name is " + name ; 
+          speak: function(){
+            return `Hello, my name is ${newName}`
+          }
       }
-    } 
-    return myobject.speak();
+    return smartGuy.speak();
 }
 
-console.log(makeSmartPerson("ivan"));
+console.log(makeSmartPerson("ivan"))
 
 
 
 
 
 
-/*
+
+
+
 // ⭐️ Example Test Data ⭐️
 
 var inventory = [
@@ -124,7 +139,7 @@ var inventory = [
   { id: 14, car_make: "Dodge", car_model: "Ram Van 1500", car_year: 1999 }
   /// ... Truncated
 ]
-*/
+
 /**
   * ### Example Array Challenge:
   * 
@@ -159,8 +174,12 @@ function get3rdCar(inventory) {
  * it will return `This is a Lincoln Navigator`.
 */
 function getCarInfoByIndex(inventory, index) {
+return `this is a ${inventory[index].car_make} ${inventory[index].car_model}`
+ }
+
+ console.log(getCarInfoByIndex(inventory, 5))
+
  
-}
 
 /**
  * ### Challenge `getLastCarInfo`
@@ -173,8 +192,8 @@ function getCarInfoByIndex(inventory, index) {
  * For example, if getLastCarInfo is invoked passing the inventory inside /data/inventory.js,
  * it will return `This is a Lincoln Town Car`.
 */
-function getLastCarInfo(/* code here */) {
-  /* code here */
+function getLastCarInfo(inventory) {
+  return inventory[inventory.length-1]
 }
 
 /**
@@ -189,8 +208,8 @@ function getLastCarInfo(/* code here */) {
  * For example, if getCarInfoById is invoked with the inventory and the number 1,
  * it will return `This is a Lincoln Navigator`.
 */
-function getCarInfoById(/* code here */) {
-  /* code here */
+function getCarInfoById(inventory, id) {
+
 }
 
 /**
