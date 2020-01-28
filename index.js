@@ -74,7 +74,6 @@ function getName(newName){
   const thing = {
     name: newName
   };
-
   return `Hello, my name is ${thing.name}`;
 }
 
@@ -177,7 +176,7 @@ function getCarInfoByIndex(inventory, index) {
 return `this is a ${inventory[index].car_make} ${inventory[index].car_model}`
  }
 
- console.log(getCarInfoByIndex(inventory, 5))
+
 
  
 
@@ -209,8 +208,10 @@ function getLastCarInfo(inventory) {
  * it will return `This is a Lincoln Navigator`.
 */
 function getCarInfoById(inventory, id) {
-
+      return `this is a ${inventory[id].car_make} ${inventory[id].car_model}`
 }
+
+console.log(getCarInfoById(inventory, (4)))
 
 /**
  * ### Challenge `sortCarInventory`
@@ -220,9 +221,13 @@ function getCarInfoById(inventory, id) {
  *     (1) an array which is an inventory of cars like the one inside /data/inventory.js.
  * sortCarInventory returns an inventory that is sorted by car_model, ascending [A-Z].
 */
-function sortCarInventory(/* code here */) {
-  /* code here */
-}
+// function sortCarInventory(arr) {
+//   const newArr = [];
+//   arr.sort(a,b) {
+//   if(a.car_model < b.car_model){return -1}
+//   if(arr.car_model < b.car_model){return 1}
+//   return 0;
+// }
 
 /**
  * ### Challenge `getModelYears`
@@ -233,7 +238,7 @@ function sortCarInventory(/* code here */) {
  *     (1) an array which is an inventory of cars like the one inside /data/inventory.js.
  * getModelYears returns an array containing all the 'car_year's in the inventory.
 */
-function getModelYears(/* code here */) {
+function getModelYears() {
   /* code here */
 }
 
@@ -264,8 +269,13 @@ function getOlderCars(/* code here */) {
  * made by either `Audi` or `Mercedes-Benz` or `Volkswagen` or `BMW`,
  * in the same order as they appear in the original inventory.
 */
-function getGermanCars(/* code here */) {
-  /* code here */
+function getGermanCars(array) {
+  let new1 = [] 
+  for(let i = 0; i < array.legnth; i++){
+    if(array[i].car_make === "audi" || array[i].car_make === "Mercesdes-Benz" || array[i].car_make === "BMW"){
+      new1.push(array[i])
+  }
+  return new1
 }
 
 /**
