@@ -254,10 +254,14 @@ function getModelYears(array) {
  * with a `car_year` which is at most the given desired max year,
  * in the same order as they appear in the original inventory.
 */
-function getOlderCars(inventory) {
-  
+function getOlderCars(inventory, year) {
+  const oldCars = []
+  for(let i = 0; i < inventory.length; i++){
+  if(inventory.car_year <= year){
+    oldCars.push(inventory[i])
+    }
+  }
 }
-
 /**
  * ### Challenge `getGermanCars`
  * 
@@ -300,14 +304,15 @@ function getGermanCars(array) {
  * }
 */
 
-// const sum = null;
+// const sum = null; // code here! 
 let sum = (a,b) =>{ a + b}
 
 
-//const addFive = null; 
+//const addFive = null; // code here! 
 let addFive = (number) => { number + 5}
 
-const argTimesTwo = null; // code here!
+// const argTimesTwo = null; // code here! 
+let argTimesTwo = (num) => {num * 2}
 
 /**
  * ### Challenge `carMaker`
